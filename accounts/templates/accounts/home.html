@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Login</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h2>Welcome, {{ user.get_full_name }}!</h2>
+    {% else %}
+    <a href="{% url 'social:begin' 'linkedin-openidconnect' %}">Login with LinkedIn</a>
+    {% endif %}
+</body>
+</html>
